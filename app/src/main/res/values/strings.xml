@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ProtoType_SocialApp</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="main_category">메인카테고리</string>
+    <string name="need_category">Need</string>
+
+    <string-array name="main_category_array">
+        <item>개발</item>
+        <item>영상</item>
+        <item>애니메이션</item>
+        <item>스터디</item>
+    </string-array>
+
+    <string-array name="need_category_array">
+        <item>Need You</item>
+        <item>Need Team</item>
+    </string-array>
+
+
+    <string name="registering_message_ready">InstanceID 토큰 가져오기</string>
+    <string name="registering_message_generating">InstanceID 토큰 생성중...</string>
+    <string name="registering_message_complete">완료!</string>
+
+    <!--<string name="gcm_defaultSenderId">126743491415</string>-->
+</resources>
