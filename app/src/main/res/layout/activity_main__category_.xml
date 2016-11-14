@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/image_develop"
-            android:background="@drawable/apple"
+            android:background="@drawable/dev"
             android:layout_weight="1"
             android:onClick="Onclick"/>
 
@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_media"
             android:onClick="Onclick"
-            android:background="@drawable/grape"
-            android:layout_weight="3" />
+            android:background="@drawable/fil"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_animation"
             android:onClick="Onclick"
-            android:background="@drawable/peach"
+            android:background="@drawable/ani"
             android:layout_weight="1" />
 
         <ImageView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_study"
             android:onClick="Onclick"
-            android:background="@drawable/strawberry"
-            android:layout_weight="3" />
+            android:background="@drawable/stu"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
