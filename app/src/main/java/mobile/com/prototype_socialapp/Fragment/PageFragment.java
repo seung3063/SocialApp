@@ -18,6 +18,7 @@ import mobile.com.prototype_socialapp.R;
 public class PageFragment extends Fragment {
     private int mPageNumber;
     String[] list={"앱개발 같이할 분 찾습니다","영상팀에서 조명 엔지니어 구합니다"};
+
     public static PageFragment create(int pageNumber) {
         PageFragment fragment = new PageFragment();
         Bundle args = new Bundle();
