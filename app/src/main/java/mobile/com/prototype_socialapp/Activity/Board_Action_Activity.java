@@ -40,10 +40,10 @@ public class Board_Action_Activity extends ActionBarActivity{
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
 
-
     private ListView navigation_list;
     private ViewPager mPager;
     private TabLayout tabLayout;
+    Pager_Adapter pager_adapter;
 
     private int category_num;
 
@@ -79,8 +79,8 @@ public class Board_Action_Activity extends ActionBarActivity{
         tabLayout.addTab(tabLayout.newTab().setText("Need Team"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        Pager_Adapter adapter=new Pager_Adapter(getSupportFragmentManager(),tabLayout.getTabCount());
-        mPager.setAdapter(adapter);
+        pager_adapter =new Pager_Adapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        mPager.setAdapter(pager_adapter);
 
         mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -114,22 +114,26 @@ public class Board_Action_Activity extends ActionBarActivity{
     public class ListItemClickListner implements ListView.OnItemClickListener{
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-            switch (position) {
-                case 0:
-                    category_num=0;
-                    Log.d("good","yes");
-                    //mainLayout.setBackgroundColor(Color.parseColor("RED"));
-                    break;
-                case 1:
-                    category_num=1;
-                    break;
-                case 2:
-                    category_num=2;
-                    break;
-                case 3:
-                    category_num=3;
-                    break;
-            }
+
+            pager_adapter.setMain_category_num(position);
+            
+//            switch (position) {
+//                case 0:
+//                    category_num=0;
+//                    Log.d("good","yes");
+//                    //mainLayout.setBackgroundColor(Color.parseColor("RED"));
+//                    break;
+//                case 1:
+//                    category_num=1;
+//                    break;
+//                case 2:
+//                    category_num=2;
+//                    break;
+//                case 3:
+//                    category_num=3;
+//                    break;
+//            }
+
             drawerLayout.closeDrawer(navigation_list);
 
 

@@ -17,6 +17,19 @@
         <item>Need Team</item>
     </string-array>
 
+    <string-array name="role_category_array">
+        <item>개발자</item>
+        <item>디자이너</item>
+        <item>기획자</item>
+        <item>배우</item>
+        <item>카메라감독</item>
+        <item>조명감독</item>
+        <item>애니메이터</item>
+        <item>작가</item>
+        <item>감독</item>
+    </string-array>
+
+    <string name="role_category">역할군을 선택해주세요~</string>
 
     <string name="registering_message_ready">InstanceID 토큰 가져오기</string>
     <string name="registering_message_generating">InstanceID 토큰 생성중...</string>

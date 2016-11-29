@@ -20,10 +20,14 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import mobile.com.prototype_socialapp.R;
+import mobile.com.prototype_socialapp.Singleton.LOGIN_KEY;
 import mobile.com.prototype_socialapp.Singleton.VolleySingleton;
 
 public class register_board extends AppCompatActivity {
@@ -92,6 +96,12 @@ public class register_board extends AppCompatActivity {
                 title=title_edittext.getText().toString();
                 content=content_edittext.getText().toString();
 
+                long now = System.currentTimeMillis();
+                Date date = new Date(now);
+                SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                final String formatDate = sdfNow.format(date);
+                Log.d("date",formatDate);
+
                 StringRequest strRequest = new StringRequest(Request.Method.POST, login_url,
                         new Response.Listener<String>()
                         {
@@ -114,10 +124,12 @@ public class register_board extends AppCompatActivity {
                     protected Map<String, String> getParams()
                     {
                         Map<String, String> params = new HashMap<String, String>();
+                        params.put("user_id",""+LOGIN_KEY.getInstance().GetID());
                         params.put("main_category",main_category);
                         params.put("sub_category",sub_category);
                         params.put("title",title);
                         params.put("content",content);
+                        params.put("date",formatDate);
                         return params;
                     }
                 };

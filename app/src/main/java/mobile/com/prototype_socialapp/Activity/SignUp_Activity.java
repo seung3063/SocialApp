@@ -4,10 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -44,8 +47,12 @@ public class SignUp_Activity extends AppCompatActivity {
     private final String user_info_url ="http://10.0.3.2:8080/socialapp/user_info.jsp";
     private final String id_check_url="http://10.0.3.2:8080/socialapp/id_check.jsp";
 
+    private Spinner role_category_spinner;
+
     private int check_num;
     private Boolean check_ok=false;
+
+    private String str_role="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +72,22 @@ public class SignUp_Activity extends AppCompatActivity {
         user_age=(EditText)findViewById(R.id.user_age);
         user_region=(EditText)findViewById(R.id.user_region);
         user_act=(EditText)findViewById(R.id.user_act);
+        role_category_spinner =(Spinner)findViewById(R.id.role_category);
+
+        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.role_category_array,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        role_category_spinner.setAdapter(adapter);
+        role_category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(""+parent.getItemAtPosition(position).toString(),"여기여기");
+                Log.d(""+position,"여기여기");
+                str_role=""+position;
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
 
         btn_id_check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,6 +194,7 @@ public class SignUp_Activity extends AppCompatActivity {
                             params.put("user_region",str_user_region);
                             params.put("user_act",str_user_act);
                             params.put("user_sex",str_user_sex);
+                            params.put("user_role",str_role);
 
                             return params;
                         }
