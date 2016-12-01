@@ -79,7 +79,7 @@ public class Board_Action_Activity extends ActionBarActivity{
         tabLayout.addTab(tabLayout.newTab().setText("Need Team"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        pager_adapter =new Pager_Adapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        pager_adapter =new Pager_Adapter(getSupportFragmentManager(),tabLayout.getTabCount(),0);
         mPager.setAdapter(pager_adapter);
 
         mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -116,55 +116,9 @@ public class Board_Action_Activity extends ActionBarActivity{
         public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
 
             pager_adapter.setMain_category_num(position);
-            
-//            switch (position) {
-//                case 0:
-//                    category_num=0;
-//                    Log.d("good","yes");
-//                    //mainLayout.setBackgroundColor(Color.parseColor("RED"));
-//                    break;
-//                case 1:
-//                    category_num=1;
-//                    break;
-//                case 2:
-//                    category_num=2;
-//                    break;
-//                case 3:
-//                    category_num=3;
-//                    break;
-//            }
+            pager_adapter.notifyDataSetChanged();
 
             drawerLayout.closeDrawer(navigation_list);
-
-
-            StringRequest strRequest = new StringRequest(Request.Method.POST, page_list_url,
-                    new Response.Listener<String>()
-                    {
-                        @Override
-                        public void onResponse(String response)
-                        {
-                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                        }
-                    },
-                    new Response.ErrorListener()
-                    {
-                        @Override
-                        public void onErrorResponse(VolleyError error)
-                        {
-                            Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    })
-            {
-                @Override
-                protected Map<String, String> getParams()
-                {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("category_num",""+category_num);
-                    return params;
-                }
-            };
-            requestQueue.add(strRequest);
-
 
 
         }
