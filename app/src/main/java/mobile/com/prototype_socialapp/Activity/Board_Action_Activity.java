@@ -49,7 +49,8 @@ public class Board_Action_Activity extends ActionBarActivity{
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String page_list_url ="http://10.0.3.2:8080/socialapp/page_list.jsp";
+    //private final String page_list_url ="http://10.0.3.2:8080/socialapp/page_list.jsp";
+    private final String page_list_url ="http://52.78.9.48:8080/socialapp/page_list.jsp";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

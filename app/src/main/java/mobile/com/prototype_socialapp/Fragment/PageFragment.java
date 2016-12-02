@@ -48,7 +48,8 @@ public class PageFragment extends Fragment {
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String url ="http://10.0.3.2:8080/socialapp/show_main_list.jsp";
+    //private final String url ="http://10.0.3.2:8080/socialapp/show_main_list.jsp";
+    private final String url ="http://52.78.9.48:8080/socialapp/show_main_list.jsp";
 
     private ArrayList<BoardTable> items = new ArrayList<>();
 

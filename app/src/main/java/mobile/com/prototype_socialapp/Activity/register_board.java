@@ -43,7 +43,8 @@ public class register_board extends AppCompatActivity {
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String login_url="http://10.0.3.2:8080/socialapp/board_table.jsp";
+    //private final String login_url="http://10.0.3.2:8080/socialapp/board_table.jsp";
+    private final String login_url="http://52.78.9.48:8080/socialapp/board_table.jsp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private VolleySingleton volley;
     private RequestQueue requestQueue;
 
-    private final String login_url="http://10.0.3.2:8080/socialapp/login.jsp";
+    //private final String login_url="http://10.0.3.2:8080/socialapp/login.jsp";
+    private final String login_url="http://52.78.9.48:8080/socialapp/login.jsp";
 
     private LOGIN_KEY login_key;
 

@@ -44,9 +44,10 @@ public class SignUp_Activity extends AppCompatActivity {
     private Button btn_id_check;
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String user_info_url ="http://10.0.3.2:8080/socialapp/user_info.jsp";
-    private final String id_check_url="http://10.0.3.2:8080/socialapp/id_check.jsp";
-
+    //private final String user_info_url ="http://10.0.3.2:8080/socialapp/user_info.jsp";
+    //private final String id_check_url="http://10.0.3.2:8080/socialapp/id_check.jsp";
+    private final String user_info_url ="http://52.78.9.48:8080/socialapp/user_info.jsp";
+    private final String id_check_url="http://52.78.9.48:8080/socialapp/id_check.jsp";
     private Spinner role_category_spinner;
 
     private int check_num;
@@ -105,7 +106,6 @@ public class SignUp_Activity extends AppCompatActivity {
                                 try {
                                     JSONObject jsonObject=new JSONObject(response);
                                     JSONArray jsonArray=jsonObject.getJSONArray("datasend");
-
                                     for (int i = 0; i < jsonArray.length(); i++) {
                                         jsonObject = jsonArray.getJSONObject(i);
 
