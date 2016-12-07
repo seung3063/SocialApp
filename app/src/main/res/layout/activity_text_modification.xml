@@ -10,30 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Activity.text_modification">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/menu_spinner"
-        android:spinnerMode="dropdown"
-        android:prompt="@string/main_category"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/need_spinner"
-        android:spinnerMode="dropdown"
-        android:prompt="@string/need_category"/>
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title_edittext"
+        android:id="@+id/title_edittext_text_mod"
         android:text="제목" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/content_edittext"
+        android:id="@+id/content_edittext_text_mod"
         android:text="내용"
         android:maxWidth="@dimen/activity_horizontal_margin"
         android:maxHeight="300dp"/>
@@ -42,5 +28,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="완료"
-        android:id="@+id/register_btn" />
+        android:id="@+id/register_btn_mod" />
 </LinearLayout>

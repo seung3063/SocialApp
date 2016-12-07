@@ -15,13 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="정보수정"
-        android:id="@+id/button5" />
+        android:id="@+id/btn_userinfomodi" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="내가 쓴글"
-        android:id="@+id/button6" />
+        android:id="@+id/btn_myboard" />
 
     <ListView
         android:layout_width="match_parent"

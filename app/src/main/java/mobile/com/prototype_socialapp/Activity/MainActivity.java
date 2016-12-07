@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private VolleySingleton volley;
     private RequestQueue requestQueue;
 
-    //private final String login_url="http://10.0.3.2:8080/socialapp/login.jsp";
-    private final String login_url="http://52.78.9.48:8080/socialapp/login.jsp";
+    private final String login_url="http://10.0.3.2:8080/socialapp/login.jsp";
+    //private final String login_url="http://52.78.9.48:8080/socialapp/login.jsp";
 
     private LOGIN_KEY login_key;
 
@@ -87,8 +87,23 @@ public class MainActivity extends AppCompatActivity {
                                             Toast.makeText(getApplicationContext(), "비밀번호가 다릅니다", Toast.LENGTH_SHORT).show();
                                             break;
                                         default:
+                                            String user_name=jsonObject.getString("user_name");
+                                            String user_age=jsonObject.getString("user_age");
+                                            String user_region=jsonObject.getString("user_region");
+                                            String user_act=jsonObject.getString("user_act");
+                                            String user_sex=jsonObject.getString("user_sex");
+                                            String user_role=jsonObject.getString("user_role");
+
                                             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                                             login_key.SetID(check_id);
+
+                                            login_key.setUser_name(user_name);
+                                            login_key.setUser_age(user_age);
+                                            login_key.setStr_user_sex(user_sex);
+                                            login_key.setUser_role(user_role);
+                                            login_key.setUser_act(user_act);
+                                            login_key.setUser_region(user_region);
+
                                             Intent intent=new Intent(MainActivity.this,Main_Category_Activity.class);
                                             startActivity(intent);
                                             finish();
