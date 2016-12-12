@@ -22,8 +22,17 @@
         android:layout_height="wrap_content"
         android:text="내가 쓴글"
         android:id="@+id/btn_myboard" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"
+        android:id="@+id/btn_logout" />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/notice_list"
+        android:ellipsize="end"
+        android:singleLine="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

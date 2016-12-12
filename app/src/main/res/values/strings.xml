@@ -27,6 +27,7 @@
         <item>애니메이터</item>
         <item>작가</item>
         <item>감독</item>
+        <item>성우</item>
     </string-array>
 
     <string name="role_category">역할군을 선택해주세요~</string>

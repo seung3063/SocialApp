@@ -49,8 +49,8 @@ public class Board_Action_Activity extends ActionBarActivity{
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String page_list_url ="http://10.0.3.2:8080/socialapp/page_list.jsp";
-    //private final String page_list_url ="http://52.78.9.48:8080/socialapp/page_list.jsp";
+    //private final String page_list_url ="http://192.168.0.2:8080/socialapp/page_list.jsp";
+    private final String page_list_url ="http://52.78.9.48:8080/socialapp/page_list.jsp";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,8 +106,20 @@ public class Board_Action_Activity extends ActionBarActivity{
 
         new ListItemClickListner().onItemClick(null,null,category_num,category_num);
 
-
-
+        switch (category_num){
+            case 0:
+                getSupportActionBar().setTitle("Develop");
+                break;
+            case 1:
+                getSupportActionBar().setTitle("Film");
+                break;
+            case 2:
+                getSupportActionBar().setTitle("3D Animation");
+                break;
+            case 3:
+                getSupportActionBar().setTitle("Study");
+                break;
+        }
 
     }
 
@@ -115,6 +127,21 @@ public class Board_Action_Activity extends ActionBarActivity{
     public class ListItemClickListner implements ListView.OnItemClickListener{
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+
+            switch (position) {
+                case 0:
+                    getSupportActionBar().setTitle("Develop");
+                    break;
+                case 1:
+                    getSupportActionBar().setTitle("Film");
+                    break;
+                case 2:
+                    getSupportActionBar().setTitle("3D Animation");
+                    break;
+                case 3:
+                    getSupportActionBar().setTitle("Study");
+                    break;
+            }
 
             pager_adapter.setMain_category_num(position);
             pager_adapter.notifyDataSetChanged();
@@ -162,4 +189,9 @@ public class Board_Action_Activity extends ActionBarActivity{
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        pager_adapter.notifyDataSetChanged();
+    }
 }

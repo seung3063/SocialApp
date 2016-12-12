@@ -44,8 +44,8 @@ public class user_info_modification extends AppCompatActivity {
 
     private String str_role;
 
-    private final String modify_user_info_url="http://10.0.3.2:8080/socialapp/modify_user_info.jsp";
-    //private final String login_url="http://52.78.9.48:8080/socialapp/modify_user_info.jsp";
+    //private final String modify_user_info_url="http://192.168.0.2:8080/socialapp/modify_user_info.jsp";
+    private final String modify_user_info_url="http://52.78.9.48:8080/socialapp/modify_user_info.jsp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

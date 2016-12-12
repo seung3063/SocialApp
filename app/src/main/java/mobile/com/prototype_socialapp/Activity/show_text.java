@@ -58,20 +58,29 @@ public class show_text extends AppCompatActivity {
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String show_comment_url ="http://10.0.3.2:8080/socialapp/show_comment.jsp";
-    private final String show_article_url ="http://10.0.3.2:8080/socialapp/show_article.jsp";
-    private final String comment_insert_url ="http://10.0.3.2:8080/socialapp/insert_comment.jsp";
-    //private final String show_artile_url ="http://52.78.9.48:8080/socialapp/show_article.jsp";
-    //private final String comment_insert_url ="http://52.78.9.48:8080/socialapp/insert_comment.jsp";
+    //private final String show_comment_url ="http://192.168.0.2:8080/socialapp/show_comment.jsp";
+    //private final String show_article_url ="http://192.168.0.2:8080/socialapp/show_article.jsp";
+    //private final String comment_insert_url ="http://192.168.0.2:8080/socialapp/insert_comment.jsp";
+    //private final String comment_num_url ="http://192.168.0.2:8080/socialapp/update_comment_num.jsp";
+
+    private final String show_comment_url ="http://52.78.9.48:8080/socialapp/show_comment.jsp";
+    private final String show_article_url ="http://52.78.9.48:8080/socialapp/show_article.jsp";
+    private final String comment_insert_url ="http://52.78.9.48:8080/socialapp/insert_comment.jsp";
+    private final String comment_num_url ="http://52.78.9.48:8080/socialapp/update_comment_num.jsp";
+
 
 
     String intent_String_title;
     String intent_String_content;
 
+    String count_num;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_text);
+
+
 
         Intent intent=getIntent();
         article_idx=intent.getStringExtra("idx");
@@ -174,6 +183,9 @@ public class show_text extends AppCompatActivity {
                                 case ""+8:
                                     role="감독";
                                     break;
+                                case ""+9:
+                                    role="성우";
+                                    break;
                             }
                             show_role.setText(role);
 
@@ -212,6 +224,9 @@ public class show_text extends AppCompatActivity {
                             try {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray jsonArray=jsonObject.getJSONArray("main_list");
+
+                            count_num=""+jsonArray.length();
+
                             for (int i=0;i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
                                 Comment item=new Comment();
@@ -225,6 +240,8 @@ public class show_text extends AppCompatActivity {
                         }
                         adapter.setItems(items);
                         adapter.notifyDataSetChanged();
+
+
 
                     }
                 },
@@ -256,6 +273,11 @@ public class show_text extends AppCompatActivity {
                 LOGIN_KEY key=LOGIN_KEY.getInstance();
                 final String device_user_name=key.getUser_name();
 
+                Comment item=new Comment();
+                item.setUser_name(device_user_name);
+                item.setComment_content(comment);
+                items.add(item);
+                adapter.notifyDataSetChanged();
 
                 StringRequest strRequest = new StringRequest(Request.Method.POST, comment_insert_url,
                         new Response.Listener<String>()
@@ -263,6 +285,8 @@ public class show_text extends AppCompatActivity {
                             @Override
                             public void onResponse(String response)
                             {
+                                comment_num_check();
+                                Log.d("코멘트 ","숫자");
                                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                             }
                         },
@@ -280,6 +304,7 @@ public class show_text extends AppCompatActivity {
                     {
                         Map<String, String> params = new HashMap<String, String>();
                         params.put("article_idx",article_idx);
+                        params.put("user_id",user_id);
                         params.put("user_name",""+device_user_name);
                         params.put("comment",comment);
                         Log.d("check",article_idx+user_id+comment);
@@ -287,7 +312,41 @@ public class show_text extends AppCompatActivity {
                     }
                 };
                 requestQueue.add(strRequest);
+
             }
         });
+    }
+
+
+    public void comment_num_check(){
+
+        StringRequest strRequest = new StringRequest(Request.Method.POST, comment_num_url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("article_idx",""+article_idx);
+                params.put("count_num",count_num);
+                return params;
+            }
+        };
+        requestQueue.add(strRequest);
     }
 }

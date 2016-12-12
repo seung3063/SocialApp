@@ -29,8 +29,8 @@ public class text_modification extends AppCompatActivity {
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    private final String modify_board_table_url ="http://10.0.3.2:8080/socialapp/modify_board_table.jsp";
-    //private final String modify_board_table_url ="http://52.78.9.48:8080/socialapp/modify_board_table.jsp";
+    //private final String modify_board_table_url ="http://192.168.0.2:8080/socialapp/modify_board_table.jsp";
+    private final String modify_board_table_url ="http://52.78.9.48:8080/socialapp/modify_board_table.jsp";
 
     private String article_idx;
 
