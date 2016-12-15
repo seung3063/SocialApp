@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,35 +11,58 @@
     android:orientation="vertical"
     tools:context=".Activity.SignUp_Activity">
 
+    <TextView
+
+        android:gravity="center"
+        android:text="회원가입"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
     <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="이름"
             android:id="@+id/textView3" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/user_name" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="아이디"
             android:id="@+id/textView4" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/user_id"
@@ -52,17 +76,24 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="비밀번호"
             android:id="@+id/textView5" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -72,17 +103,23 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 확인"
             android:id="@+id/textView6" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -91,47 +128,60 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나이"
             android:id="@+id/textView7" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_age" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="성별"
             android:id="@+id/textView8" />
 
         <RadioGroup
+
             android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <RadioButton
+            <android.support.v7.widget.AppCompatRadioButton
+                android:buttonTint="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="남자"
                 android:checked="true"/>
 
-            <RadioButton
+            <android.support.v7.widget.AppCompatRadioButton
+                android:buttonTint="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,48 +190,62 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="지역"
             android:id="@+id/textView9" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_region" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="활동"
             android:id="@+id/textView10" />
 
         <EditText
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_act" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textColor="@android:color/black"
             android:layout_gravity="center"
             android:text="역할군"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Spinner
+            android:backgroundTint="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/role_category"

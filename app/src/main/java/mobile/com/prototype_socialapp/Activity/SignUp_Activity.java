@@ -1,7 +1,9 @@
 package mobile.com.prototype_socialapp.Activity;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatRadioButton;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -81,6 +84,7 @@ public class SignUp_Activity extends AppCompatActivity {
         role_category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView)parent.getChildAt(0)).setTextColor(Color.BLACK);
                 Log.d(""+parent.getItemAtPosition(position).toString(),"여기여기");
                 Log.d(""+position,"여기여기");
                 str_role=""+position;
@@ -159,7 +163,7 @@ public class SignUp_Activity extends AppCompatActivity {
                 final String str_user_region=user_region.getText().toString();
                 final String str_user_act=user_act.getText().toString();
 
-                RadioButton radioButton=(RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
+                AppCompatRadioButton radioButton=(AppCompatRadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
                 final String str_user_sex=radioButton.getText().toString();
                 Log.d("sex",""+str_user_sex);
 

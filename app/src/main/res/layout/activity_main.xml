@@ -13,16 +13,18 @@
     android:weightSum="1">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/makeup"
-        />
-
-    <ImageView
+        android:layout_marginTop="50dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo2"
         android:layout_gravity="center_horizontal"/>
+    <ImageView
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center"
+        android:layout_width="151dp"
+        android:layout_height="46dp"
+        android:src="@drawable/makeup"
+        />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -39,6 +41,7 @@
             android:layout_gravity="center_vertical|center_horizontal" />
 
         <EditText
+            android:background="@drawable/login_edittext"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_id"
@@ -95,9 +98,4 @@
             android:background="@color/colorPrimary" />
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button Test"
-        android:id="@+id/button_test" />
 </LinearLayout>
