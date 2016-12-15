@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/image_develop"
-            android:background="@drawable/dev"
+            android:background="@drawable/develop"
             android:layout_weight="1"
             android:onClick="Onclick"/>
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_media"
             android:onClick="Onclick"
-            android:background="@drawable/fil"
+            android:background="@drawable/film"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_animation"
             android:onClick="Onclick"
-            android:background="@drawable/ani"
+            android:background="@drawable/animation"
             android:layout_weight="1" />
 
         <ImageView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image_study"
             android:onClick="Onclick"
-            android:background="@drawable/stu"
+            android:background="@drawable/study"
             android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
