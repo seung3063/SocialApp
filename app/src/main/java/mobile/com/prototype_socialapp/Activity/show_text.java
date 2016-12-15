@@ -55,6 +55,7 @@ public class show_text extends AppCompatActivity {
     private EditText comment_edittext;
     private Button comment_btn;
     private Button btn_modify;
+    private Button btn_delete;
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
@@ -67,6 +68,7 @@ public class show_text extends AppCompatActivity {
     private final String show_article_url ="http://52.78.9.48:8080/socialapp/show_article.jsp";
     private final String comment_insert_url ="http://52.78.9.48:8080/socialapp/insert_comment.jsp";
     private final String comment_num_url ="http://52.78.9.48:8080/socialapp/update_comment_num.jsp";
+    private final String delete_article_url ="http://52.78.9.48:8080/socialapp/delete_article.jsp";
 
 
 
@@ -104,6 +106,7 @@ public class show_text extends AppCompatActivity {
         comment_edittext=(EditText)findViewById(R.id.comment_edittext);
         comment_btn=(Button)findViewById(R.id.comment_button);
         btn_modify=(Button)findViewById(R.id.modify_btn);
+        btn_delete=(Button)findViewById(R.id.delete_btn);
 
         volley=VolleySingleton.getmInstance(this);
         requestQueue=volley.getRequestQueue();
@@ -111,6 +114,7 @@ public class show_text extends AppCompatActivity {
         if (LOGIN_KEY.getInstance().GetID().equals(user_id))
         {
             btn_modify.setVisibility(View.VISIBLE);
+            btn_delete.setVisibility(View.VISIBLE);
         }
 
         btn_modify.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +125,40 @@ public class show_text extends AppCompatActivity {
                 intent.putExtra("title",intent_String_title);
                 intent.putExtra("content",intent_String_content);
                 startActivity(intent);
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringRequest strRequest = new StringRequest(Request.Method.POST, delete_article_url,
+                        new Response.Listener<String>()
+                        {
+                            @Override
+                            public void onResponse(String response)
+                            {
+                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                            }
+                        },
+                        new Response.ErrorListener()
+                        {
+                            @Override
+                            public void onErrorResponse(VolleyError error)
+                            {
+                                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                {
+                    @Override
+                    protected Map<String, String> getParams()
+                    {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("article_idx",""+article_idx);
+                        return params;
+                    }
+                };
+                requestQueue.add(strRequest);
+                finish();
             }
         });
 
@@ -225,7 +263,7 @@ public class show_text extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray jsonArray=jsonObject.getJSONArray("main_list");
 
-                            count_num=""+jsonArray.length();
+                            count_num=""+(jsonArray.length()+1);
 
                             for (int i=0;i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
