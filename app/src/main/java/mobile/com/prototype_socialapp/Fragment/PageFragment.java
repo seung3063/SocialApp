@@ -119,7 +119,7 @@ public class PageFragment extends Fragment {
                                 BoardTable item=new BoardTable();
                                 item.setUser_id(object.getString("user_id"));
                                 item.setIdx(object.getInt("idx"));
-                                item.setTitle(object.getString("title"));
+                                item.setTitle(object.getString("title"));//역할군
                                 item.setNum_of_comment(object.getString("num_of_comment"));
                                 items.add(item);
                             }

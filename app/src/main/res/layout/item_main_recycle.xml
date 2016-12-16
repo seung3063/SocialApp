@@ -3,10 +3,12 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:background="@android:color/white"
     android:layout_height="50dp">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
             android:textColor="@android:color/black"
@@ -14,13 +16,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
             android:gravity="center"
             android:layout_marginRight="10dp"
             android:background="@drawable/circle"
             android:id="@+id/main_list_comment"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical|right" />
+        <View
+            android:background="@android:color/darker_gray"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
     </FrameLayout>
 
 

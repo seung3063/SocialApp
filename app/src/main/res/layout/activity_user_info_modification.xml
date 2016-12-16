@@ -7,49 +7,66 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".Activity.user_info_modification">
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이름"
             android:id="@+id/textView3" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_name_mod" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나이"
             android:id="@+id/textView7" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_age_mod" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="성별"
@@ -61,14 +78,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <RadioButton
+            <android.support.v7.widget.AppCompatRadioButton
+                android:textColor="@android:color/black"
                 android:id="@+id/male_mod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="남자"
                 android:checked="true"/>
 
-            <RadioButton
+            <android.support.v7.widget.AppCompatRadioButton
+                android:textColor="@android:color/black"
                 android:id="@+id/female_mod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,48 +96,64 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="지역"
             android:id="@+id/textView9" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_region_mod" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="활동"
             android:id="@+id/textView10" />
 
         <EditText
+            android:background="@drawable/login_edittext"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/user_act_mod" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
             android:text="역할군"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Spinner
+            android:backgroundTint="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/role_category_mod"
@@ -127,6 +162,9 @@
     </LinearLayout>
 
     <Button
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="수정"

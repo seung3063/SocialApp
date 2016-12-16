@@ -20,8 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
     <LinearLayout
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,11 +27,12 @@
         android:layout_marginBottom="10dp">
 
         <TextView
+
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="이름"
-            android:layout_marginRight="76dp"
+
             android:id="@+id/textView3" />
 
         <EditText
@@ -53,11 +52,12 @@
         android:layout_marginBottom="10dp">
 
         <TextView
+
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="아이디"
-            android:layout_marginRight="70dp"
+
 
             android:id="@+id/textView4" />
 
@@ -72,11 +72,10 @@
             android:layout_weight="1" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:background="@android:color/holo_blue_bright"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="30dp"
             android:text="중복검사"
-            android:textSize="30dp"
             android:id="@+id/btn_id_check" />
     </LinearLayout>
 
@@ -88,9 +87,9 @@
         >
 
         <TextView
+
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
-            android:layout_marginRight="65dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="비밀번호"
             android:id="@+id/textView5" />
@@ -115,12 +114,12 @@
         android:layout_marginBottom="10dp">
 
         <TextView
+
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="비밀번호 확인"
             android:id="@+id/textView6"
-            android:layout_marginRight="48dp"
             />
 
         <EditText
@@ -143,11 +142,9 @@
 
         <TextView
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="나이"
-            android:layout_marginRight="75dp"
-
             android:id="@+id/textView7" />
 
         <EditText
@@ -208,11 +205,10 @@
 
         <TextView
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="지역"
             android:id="@+id/textView9"
-            android:layout_marginRight="75dp"
             />
 
         <EditText
@@ -233,14 +229,14 @@
 
         <TextView
             android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="활동"
             android:id="@+id/textView10"
-            android:layout_marginRight="75dp"
             />
 
         <EditText
+            android:background="@drawable/login_edittext"
             android:maxLength="20"
             android:singleLine="true"
             android:textColor="@android:color/black"
@@ -271,7 +267,8 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원가입"
         android:id="@+id/btn_signup_true"

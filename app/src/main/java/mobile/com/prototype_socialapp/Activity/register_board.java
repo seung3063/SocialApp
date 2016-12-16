@@ -1,6 +1,7 @@
 package mobile.com.prototype_socialapp.Activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -72,6 +74,7 @@ public class register_board extends AppCompatActivity {
         main_category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView)parent.getChildAt(0)).setTextColor(Color.BLACK);
                 Log.d(""+parent.getItemAtPosition(position).toString(),"여기여기");
                 main_category=String.valueOf(position);
             }
@@ -82,6 +85,7 @@ public class register_board extends AppCompatActivity {
         need_category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView)parent.getChildAt(0)).setTextColor(Color.BLACK);
                 Log.d(""+parent.getItemAtPosition(position).toString(),"여기여기");
                 sub_category=String.valueOf(position);
             }
