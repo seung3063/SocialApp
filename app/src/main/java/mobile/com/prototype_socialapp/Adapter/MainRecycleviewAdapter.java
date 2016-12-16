@@ -37,7 +37,41 @@ public class MainRecycleviewAdapter extends RecyclerView.Adapter<MainRecycleview
 
         final BoardTable item=items.get(position);
 
-        holder.title.setText(item.getTitle());
+        String role="";
+        switch (item.getUser_role()){
+            case ""+0:
+                role="개발자";
+                break;
+            case ""+1:
+                role="디자이너";
+                break;
+            case ""+2:
+                role="기획자";
+                break;
+            case ""+3:
+                role="배우";
+                break;
+            case ""+4:
+                role="카메라감";
+                break;
+            case ""+5:
+                role="조명감독";
+                break;
+            case ""+6:
+                role="애니메이터";
+                break;
+            case ""+7:
+                role="작가";
+                break;
+            case ""+8:
+                role="감독";
+                break;
+            case ""+9:
+                role="성우";
+                break;
+        }
+
+        holder.title.setText("[ "+role+" ] "+item.getTitle());
         holder.comment_num.setText(item.getNum_of_comment());
 
     }

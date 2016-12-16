@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -49,6 +50,9 @@ public class my_board extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_board);
 
+        setSupportActionBar((Toolbar) findViewById(R.id.my_board_toolbar));
+        getSupportActionBar().setTitle("      내가 쓴글");
+
         key=LOGIN_KEY.getInstance();
         user_idx=key.GetID();
         Log.d("user_idx",user_idx);
@@ -91,6 +95,7 @@ public class my_board extends AppCompatActivity {
                                 JSONObject object=jsonArray.getJSONObject(i);
                                 BoardTable item=new BoardTable();
                                 item.setUser_id(object.getString("user_id"));
+                                item.setUser_role(object.getString("user_role"));
                                 item.setIdx(object.getInt("idx"));
                                 item.setTitle(object.getString("title"));
                                 item.setNum_of_comment(object.getString("num_of_comment"));

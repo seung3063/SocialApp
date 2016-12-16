@@ -7,8 +7,15 @@
     android:background="@android:color/white"
     tools:context=".Activity.register_board">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/register_board_toolbar"
+        android:minHeight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#303F9F">
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
-        android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -112,7 +119,7 @@
     <Button
         android:backgroundTint="@color/colorPrimary"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="완료"

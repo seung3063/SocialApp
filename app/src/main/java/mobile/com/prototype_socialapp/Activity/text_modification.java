@@ -3,6 +3,7 @@ package mobile.com.prototype_socialapp.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,9 @@ public class text_modification extends AppCompatActivity {
 
         volley=VolleySingleton.getmInstance(this);
         requestQueue=volley.getRequestQueue();
+
+        setSupportActionBar((Toolbar) findViewById(R.id.text_mod_toolbar));
+        getSupportActionBar().setTitle("      게시글 수정");
 
         title=(EditText)findViewById(R.id.title_edittext_text_mod);
         content=(EditText)findViewById(R.id.content_edittext_text_mod);

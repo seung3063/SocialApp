@@ -1,12 +1,16 @@
 package mobile.com.prototype_socialapp.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -77,12 +81,14 @@ public class show_text extends AppCompatActivity {
 
     String count_num;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_text);
 
-
+        setSupportActionBar((Toolbar) findViewById(R.id.show_text_toolbar));
+        getSupportActionBar().setTitle("      게시글");
 
         Intent intent=getIntent();
         article_idx=intent.getStringExtra("idx");
@@ -350,6 +356,7 @@ public class show_text extends AppCompatActivity {
                     }
                 };
                 requestQueue.add(strRequest);
+                comment_edittext.setText("");
 
             }
         });

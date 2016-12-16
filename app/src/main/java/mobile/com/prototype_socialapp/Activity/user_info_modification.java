@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatRadioButton;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -54,6 +55,9 @@ public class user_info_modification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info_modification);
+
+        setSupportActionBar((Toolbar) findViewById(R.id.user_info_mod_toolbar));
+        getSupportActionBar().setTitle("      회원 정보 수정");
 
         key=LOGIN_KEY.getInstance();
         user_idx=key.GetID();

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -29,7 +30,7 @@ import mobile.com.prototype_socialapp.Singleton.VolleySingleton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_signup;
+    private TextView btn_signup;
     private Button btn_login;
     private EditText user_id;
     private EditText user_pw;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseInstanceId.getInstance().getToken();
         Log.d("Token",""+FirebaseInstanceId.getInstance().getToken());
 
-        btn_signup=(Button)findViewById(R.id.btn_signup);
+        btn_signup=(TextView) findViewById(R.id.btn_signup);
         btn_login=(Button)findViewById(R.id.btn_login);
         user_id=(EditText)findViewById(R.id.user_id);
         user_pw=(EditText)findViewById(R.id.user_pw);

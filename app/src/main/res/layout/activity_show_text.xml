@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,160 +7,181 @@
     android:orientation="vertical"
     tools:context=".Activity.show_text">
 
-    <android.support.v7.widget.RecyclerView
-        android:background="@android:color/white"
-        android:id="@+id/comment_list"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
-
-    <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
-        android:background="#ffffff"
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="400dp">
-
-        <LinearLayout
-            android:orientation="vertical"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/show_text_toolbar"
+            android:minHeight="60dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="#303F9F">
+        </android.support.v7.widget.Toolbar>
 
-            <TextView
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:id="@+id/show_title"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="507dp">
 
-            <View
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"></View>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal"
+            <android.support.v7.widget.RecyclerView
+                android:background="@android:color/white"
+                android:id="@+id/comment_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+            <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+                android:background="#ffffff"
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical">
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                     <TextView
-                        android:textSize="15sp"
-                        android:layout_marginLeft="10dp"
                         android:textColor="@android:color/black"
-                        android:textIsSelectable="true"
-                        android:text="My role set : "
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:textSize="15sp"
-                        android:textColor="@android:color/black"
-                        android:id="@+id/show_role"
-                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:id="@+id/show_title"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
+                    <View
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"></View>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <TextView
+                                android:textSize="15sp"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@android:color/black"
+                                android:textIsSelectable="true"
+                                android:text="My role set : "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:textSize="15sp"
+                                android:textColor="@android:color/black"
+                                android:id="@+id/show_role"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_marginRight="15dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:visibility="gone"
+                            android:text="수정"
+                            android:id="@+id/modify_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp" />
+                        <Button
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:visibility="gone"
+                            android:text="삭제"
+                            android:id="@+id/delete_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"></View>
+
+                    <LinearLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:id="@+id/show_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:text="  /  "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:id="@+id/show_region"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"></View>
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/show_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <View
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"></View>
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/show_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
+            </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
 
-                <Button
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="15dp"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:visibility="gone"
-                    android:text="수정"
-                    android:id="@+id/modify_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp" />
-                <Button
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:visibility="gone"
-                    android:text="삭제"
-                    android:id="@+id/delete_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp" />
-            </LinearLayout>
+        </FrameLayout>
 
-            <View
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"></View>
+        <LinearLayout
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
 
-            <LinearLayout
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:textColor="@android:color/black"
-                    android:id="@+id/show_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:textColor="@android:color/black"
-                    android:text="  /  "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:textColor="@android:color/black"
-                    android:id="@+id/show_region"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <View
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"></View>
-
-            <TextView
-                android:layout_margin="10dp"
                 android:textColor="@android:color/black"
-                android:id="@+id/show_time"
-                android:layout_width="wrap_content"
+                android:id="@+id/comment_edittext"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <View
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"></View>
-            <TextView
-                android:layout_margin="10dp"
-                android:textColor="@android:color/black"
-                android:id="@+id/show_content"
+            <Button
+                android:id="@+id/comment_button"
+                android:layout_weight="3"
+                android:text="댓글 입력"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-
-    </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
-
-    <LinearLayout
-        android:background="#ffffff"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-
-            android:textColor="@android:color/black"
-            android:id="@+id/comment_edittext"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/comment_button"
-            android:layout_weight="3"
-            android:text="댓글 입력"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
-</FrameLayout>
+
+</ScrollView>

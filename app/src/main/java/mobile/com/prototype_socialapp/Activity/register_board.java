@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,6 +56,9 @@ public class register_board extends AppCompatActivity {
 
         volley=VolleySingleton.getmInstance(this);
         requestQueue=volley.getRequestQueue();
+
+        setSupportActionBar((Toolbar) findViewById(R.id.register_board_toolbar));
+        getSupportActionBar().setTitle("      게시글 등록");
 
         main_category_spinner=(Spinner)findViewById(R.id.menu_spinner);
         need_category_spinner=(Spinner)findViewById(R.id.need_spinner);
@@ -130,6 +134,7 @@ public class register_board extends AppCompatActivity {
                     {
                         Map<String, String> params = new HashMap<String, String>();
                         params.put("user_id",""+LOGIN_KEY.getInstance().GetID());
+                        params.put("user_role",""+LOGIN_KEY.getInstance().getUser_role());
                         params.put("main_category",main_category);
                         params.put("sub_category",sub_category);
                         params.put("title",title);

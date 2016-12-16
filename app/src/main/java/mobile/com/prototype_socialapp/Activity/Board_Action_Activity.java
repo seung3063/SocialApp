@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+import mobile.com.prototype_socialapp.Adapter.ListViewAdapter;
 import mobile.com.prototype_socialapp.Adapter.Pager_Adapter;
 import mobile.com.prototype_socialapp.R;
 import mobile.com.prototype_socialapp.Singleton.VolleySingleton;
@@ -69,8 +70,23 @@ public class Board_Action_Activity extends ActionBarActivity{
         mPager=(ViewPager)findViewById(R.id.pager);
 
         navigation_list =(ListView)findViewById(R.id.navigation_list);
-        navigation_list.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list_item));
+        //navigation_list.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list_item));
         navigation_list.setOnItemClickListener(new ListItemClickListner());
+
+        ListViewAdapter adapter;
+
+        // Adapter 생성
+        adapter = new ListViewAdapter() ;
+
+        // 리스트뷰 참조 및 Adapter달기
+
+        navigation_list.setAdapter(adapter);
+
+        // 첫 번째 아이템 추가.
+        adapter.addItem("Develop") ;
+        adapter.addItem("Film") ;
+        adapter.addItem("Animation") ;
+        adapter.addItem("Study") ;
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

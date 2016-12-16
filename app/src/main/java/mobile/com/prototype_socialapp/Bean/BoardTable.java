@@ -12,6 +12,15 @@ public class BoardTable {
     private String content;
     private String time;
     private String num_of_comment;
+    private String user_role;
+
+    public String getUser_role() {
+        return user_role;
+    }
+
+    public void setUser_role(String user_role) {
+        this.user_role = user_role;
+    }
 
     public String getNum_of_comment() {
         return num_of_comment;

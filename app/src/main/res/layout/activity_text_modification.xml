@@ -7,6 +7,14 @@
     android:background="#ffffff"
     tools:context=".Activity.text_modification">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/text_mod_toolbar"
+        android:minHeight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#303F9F">
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_marginTop="10dp"
         android:orientation="horizontal"

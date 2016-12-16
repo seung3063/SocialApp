@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -70,7 +71,8 @@ public class Personal_activity extends AppCompatActivity {
         volley=VolleySingleton.getmInstance(this);
         requestQueue=volley.getRequestQueue();
 
-
+        setSupportActionBar((Toolbar) findViewById(R.id.personal_toolbar));
+        getSupportActionBar().setTitle("      Personal Page");
         user_info_mofication_btn=(Button)findViewById(R.id.btn_userinfomodi);
         my_board_btn=(Button)findViewById(R.id.btn_myboard);
         btn_logout=(Button)findViewById(R.id.btn_logout);

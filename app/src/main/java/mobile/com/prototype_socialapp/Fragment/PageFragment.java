@@ -34,6 +34,7 @@ import mobile.com.prototype_socialapp.Adapter.MainRecycleviewAdapter;
 import mobile.com.prototype_socialapp.Bean.BoardTable;
 import mobile.com.prototype_socialapp.Listener.RecyclerViewOnItemClickListener;
 import mobile.com.prototype_socialapp.R;
+import mobile.com.prototype_socialapp.Singleton.LOGIN_KEY;
 import mobile.com.prototype_socialapp.Singleton.VolleySingleton;
 
 /**
@@ -48,7 +49,7 @@ public class PageFragment extends Fragment {
 
     private VolleySingleton volley;
     private RequestQueue requestQueue;
-    //private final String url ="http://192.168.0.2:8080/socialapp/show_main_list.jsp";
+    //private final String url ="http://192.168.0.58:8080/socialapp/show_main_list.jsp";
     private final String url ="http://52.78.9.48:8080/socialapp/show_main_list.jsp";
 
     private ArrayList<BoardTable> items = new ArrayList<>();
@@ -118,6 +119,7 @@ public class PageFragment extends Fragment {
                                 JSONObject object=jsonArray.getJSONObject(i);
                                 BoardTable item=new BoardTable();
                                 item.setUser_id(object.getString("user_id"));
+                                item.setUser_role(object.getString("user_role"));
                                 item.setIdx(object.getInt("idx"));
                                 item.setTitle(object.getString("title"));//역할군
                                 item.setNum_of_comment(object.getString("num_of_comment"));
